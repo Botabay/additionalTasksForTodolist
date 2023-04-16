@@ -1,0 +1,9 @@
+03 - Todolist for students
+2:11 - uuid
+7:48 - про key
+9:18 - addTask
+17:05 - чтение значения из input
+29:13 - очистка поля input (onChange)
+30:09 - добавление task при нажатии на enter (onKeyPress)
+37:51 - рефактор кода
+47:37 - рефактор функции удаления
