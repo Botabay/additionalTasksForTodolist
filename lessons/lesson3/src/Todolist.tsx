@@ -57,10 +57,6 @@ export function Todolist(props: PropsType) {
     }
     let [inpState,setInpState]=useState<string>('');
 
-    const onClickLiHandler=(e:string) => {
-        props.removeTask(e)
-    };
-
     const onClickFilterButtonHandler=(s:FilterValuesType)=>{
         changeFilter(s);
     }
@@ -77,12 +73,21 @@ export function Todolist(props: PropsType) {
         </div>
         <ul>
             {
-                arrayWrapper().map(t => <li key={t.id}>
-                    <input type="checkbox" checked={t.isDone} onChange={() => { }} />
-                    <span>{t.title}</span>
-                {/* <button onClick={()=>{onClickLiHandler(t.id)}}>x</button> */}
-                    <Button callback={()=>{onClickLiHandler(t.id)} } value={'x'}/>
-                </li>)
+                arrayWrapper().map(t => {
+                    const onClickLiHandler=(e:string) => {
+                        props.removeTask(e)
+                    };
+                    return (
+                        <li key={t.id}>
+                            <input type="checkbox" checked={t.isDone} onChange={() => { }} />
+                            <span>{t.title}</span>
+                        {/* <button onClick={()=>{onClickLiHandler(t.id)}}>x</button> */}
+                            <Button callback={()=>{onClickLiHandler(t.id)} } value={'x'}/>
+                        </li>
+                    )
+
+                }
+                )
             }
         </ul>
         <div>
