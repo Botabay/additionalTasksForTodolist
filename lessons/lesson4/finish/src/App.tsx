@@ -26,8 +26,8 @@ function App() {
         setTasks(newTasks);
     }
 
-    const checkBoxStatus=(taskId:string,checkValue:boolean)=>{
-        setTasks([...tasks.map(el=>el.id===taskId ? { ...el, isDone:checkValue} : el )])
+    const checkBoxStatus=(checkValue:boolean,id:string)=>{
+        setTasks(tasks.map(el=>el.id===id?{...el,isDone:checkValue}:el))
     }
 
     let [filter, setFilter] = useState<FilterValuesType>("all");

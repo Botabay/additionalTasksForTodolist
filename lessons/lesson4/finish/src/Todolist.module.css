@@ -1,15 +1,15 @@
-.error{
+.error {
+    border: 1px solid red
+}
+
+.errorMessage {
+    color: red;
+}
+
+.activeFilter {
     background-color: red;
-}
-
-.errorMessage{
-    color:red
-}
-
-.activeFilter{
-    border-color: blue;
 }
 
 .isDone {
     opacity: 0.5;
-  }
+}
